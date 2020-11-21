@@ -3,7 +3,9 @@ const router = express.Router()
 
 router.get('/', (req, res) => {
   // 檢查 cookie 是否可以解析出 firstName
-  if (req.signedCookies.user) {
+  // const cookieUser = req.signedCookies.user
+  const sessionUser = req.session.user
+  if (sessionUser) {
     return res.redirect('/welcome')
   }
 

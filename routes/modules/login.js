@@ -25,8 +25,9 @@ router.post('/', (req, res) => {
         res.render('login', { errorMsg: 'Username 或 Password 錯誤!' })
         return;
       }
-      // 對 cookie 進行簽章(加密) + 100分鐘的存活期 
-      res.cookie('user', result.firstName, { signed: true, maxAge: 6000000 });
+      // 對 cookie 進行簽章(加密) + 10分鐘的存活期 
+      // res.cookie('user', result.firstName, { signed: true, maxAge: 600 * 1000 });
+      req.session.user = result.firstName;
       res.redirect('/welcome')
     })
     .catch(error => console.log(`login error: ${error}`))

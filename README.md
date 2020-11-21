@@ -7,7 +7,8 @@
 ## 功能描述 (features)
 
 - 提供使用者登入頁面，透過 email & password 驗證使用者身分，驗證完會導去歡迎頁
-- 使用 Cookie 紀錄使用者登入狀態 (一次登入可以維持 100 分鐘，之後 cookie 會自動失效，要重新登入)
+- 使用 session 紀錄使用者登入狀態 (一次登入可以維持 10 分鐘，之後 cookie 會自動失效，要重新登入)
+- 觸發登出會清除 session 並導回登入頁
 
 ## 安裝與執行步驟 (installation and execution)
 
@@ -54,6 +55,7 @@
 - Node.js: v10.15.0
 - express: v4.17.1
 - cookie-parser: v1.4.5
+- express-session: v1.17.1
 - express-handlebars: v5.2.0
 - method-override: v3.0.0
 - mongoose: 5.10.9
